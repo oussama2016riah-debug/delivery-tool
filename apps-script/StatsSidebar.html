@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 16px; background: #f8fafc; }
+    h2 { color: #1e3a8a; font-size: 1.3rem; margin-bottom: 16px; }
+    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .stat-card { background: white; border-radius: 12px; padding: 14px; box-shadow: 0 2px 6px rgba(0,0,0,.06); text-align: center; }
+    .stat-card .num { font-size: 1.6rem; font-weight: 700; color: #2563eb; }
+    .stat-card .label { font-size: .75rem; color: #64748b; margin-top: 4px; }
+    .section-title { color: #1e3a8a; font-weight: 600; margin: 16px 0 8px; font-size: .95rem; }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; margin-bottom: 16px; }
+    th { background: #e8f0fe; text-align: left; padding: 6px 8px; }
+    td { padding: 6px 8px; border-bottom: 1px solid #e5e7eb; }
+    .refresh-btn { background: #2563eb; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%; }
+    .refresh-btn:hover { background: #1e40af; }
+  </style>
+</head>
+<body>
+  <h2>📊 Dashboard</h2>
+  <div id="stats" class="stat-grid">
+    <div class="stat-card"><div class="num" id="total">0</div><div class="label">Total Orders</div></div>
+    <div class="stat-card"><div class="num" id="delivered">0</div><div class="label">Delivered</div></div>
+    <div class="stat-card"><div class="num" id="pending">0</div><div class="label">Pending</div></div>
+    <div class="stat-card"><div class="num" id="failed">0</div><div class="label">Failed</div></div>
+    <div class="stat-card"><div class="num" id="revenue">0</div><div class="label">Revenue (DA)</div></div>
+    <div class="stat-card"><div class="num" id="rate">0%</div><div class="label">Delivery Rate</div></div>
+  </div>
+
+  <div class="section-title">By Provider</div>
+  <table id="provider-table"><tr><th>Provider</th><th>Total</th><th>Delivered</th><th>Revenue</th></tr></table>
+
+  <div class="section-title">By Wilaya</div>
+  <table id="wilaya-table"><tr><th>Wilaya</th><th>Total</th><th>Delivered</th></tr></table>
+
+  <button class="refresh-btn" onclick="loadStats()">🔄 Refresh</button>
+
+  <script>
+    function loadStats() {
+      google.script.run.withSuccessHandler(function(json) {
+        var s = JSON.parse(json);
+        document.getElementById('total').textContent = s.total;
+        document.getElementById('delivered').textContent = s.delivered;
+        document.getElementById('pending').textContent = s.pending;
+        document.getElementById('failed').textContent = s.failed;
+        document.getElementById('revenue').textContent = s.totalRevenue.toLocaleString();
+        document.getElementById('rate').textContent = s.deliveryRate + '%';
+
+        var pt = document.getElementById('provider-table');
+        pt.innerHTML = '<tr><th>Provider</th><th>Total</th><th>Delivered</th><th>Revenue</th></tr>';
+        for (var p in s.byProvider) {
+          var pr = s.byProvider[p];
+          pt.innerHTML += '<tr><td>' + p + '</td><td>' + pr.total + '</td><td>' + pr.delivered + '</td><td>' + pr.revenue.toLocaleString() + '</td></tr>';
+        }
+
+        var wt = document.getElementById('wilaya-table');
+        wt.innerHTML = '<tr><th>Wilaya</th><th>Total</th><th>Delivered</th></tr>';
+        for (var w in s.byWilaya) {
+          var wr = s.byWilaya[w];
+          wt.innerHTML += '<tr><td>' + w + '</td><td>' + wr.total + '</td><td>' + wr.delivered + '</td></tr>';
+        }
+      }).getStatsJSON();
+    }
+    loadStats();
+  </script>
+</body>
+</html>

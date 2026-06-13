@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 16px; background: #f8fafc; }
+    h2 { color: #1e3a8a; font-size: 1.3rem; }
+    label { display: block; margin: 16px 0 4px; font-weight: 600; font-size: .9rem; color: #1e293b; }
+    textarea { width: 100%; height: 200px; border: 1px solid #d1d5db; border-radius: 8px; padding: 10px; font-family: monospace; font-size: .85rem; }
+    button { background: #2563eb; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 12px; }
+    button:hover { background: #1e40af; }
+    .note { font-size: .8rem; color: #64748b; margin: 4px 0; }
+  </style>
+</head>
+<body>
+  <h2>⚙️ Settings</h2>
+
+  <label>Provider API Keys (JSON)</label>
+  <div class="note">Format: {"yalidine": "key1", "zr": "key2", ...}</div>
+  <textarea id="apiKeys" placeholder='{"yalidine": "your_key_here"}'></textarea>
+
+  <label>Plan</label>
+  <select id="planSelect" style="width:100%;padding:8px;border-radius:8px;border:1px solid #d1d5db;">
+    <option value="standard">Standard</option>
+    <option value="advanced">Advanced</option>
+  </select>
+
+  <button onclick="save()">💾 Save</button>
+  <div id="msg" style="margin-top:12px;font-size:.9rem;"></div>
+
+  <script>
+    function load() {
+      google.script.run.withSuccessHandler(function(data) {
+        document.getElementById('apiKeys').value = data.keys;
+        document.getElementById('planSelect').value = data.plan;
+      }).withFailureHandler(function(e) {
+        document.getElementById('msg').textContent = 'Error loading settings';
+      }).getSettings();
+    }
+
+    function save() {
+      var keys = document.getElementById('apiKeys').value;
+      var plan = document.getElementById('planSelect').value;
+      google.script.run.withSuccessHandler(function() {
+        document.getElementById('msg').textContent = '✅ Saved successfully';
+      }).withFailureHandler(function(e) {
+        document.getElementById('msg').textContent = '❌ Error: ' + e.message;
+      }).saveSettings(keys, plan);
+    }
+
+    load();
+  </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 16px; background: #f8fafc; color: #1e293b; }
+    h2 { color: #1e3a8a; font-size: 1.3rem; }
+    h3 { color: #2563eb; font-size: 1rem; margin: 16px 0 8px; }
+    p, li { font-size: .9rem; line-height: 1.6; }
+    ul { padding-left: 20px; }
+    .step { background: white; border-radius: 10px; padding: 12px; margin-bottom: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+    .step-num { background: #2563eb; color: white; border-radius: 50%; width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 700; margin-right: 8px; }
+  </style>
+</head>
+<body>
+  <h2>❓ Help</h2>
+
+  <div class="step">
+    <div><span class="step-num">1</span> <strong>Prepare your sheet</strong></div>
+    <p>Make sure your "Orders" sheet has columns: Order ID, Customer, Phone, Address, Wilaya, Commune, Product, Quantity, Price, Delivery, Provider, Status, Tracking, Notes, Date.</p>
+  </div>
+
+  <div class="step">
+    <div><span class="step-num">2</span> <strong>Set up API keys</strong></div>
+    <p>Go to Settings → enter your provider API keys as JSON.</p>
+  </div>
+
+  <div class="step">
+    <div><span class="step-num">3</span> <strong>Send orders</strong></div>
+    <p>Select "Send Orders" from the Delivery Tool menu. Only rows with empty or "Pending" status are processed.</p>
+  </div>
+
+  <div class="step">
+    <div><span class="step-num">4</span> <strong>Track statuses</strong></div>
+    <p>Use "Update Statuses" to refresh delivery statuses from providers.</p>
+  </div>
+
+  <h3>Supported Providers</h3>
+  <ul>
+    <li>Yalidine, ZR Express, DHD, Allo, 48HR</li>
+    <li>WorldExpress, Anderson, Guepex, Samex</li>
+    <li>Ovred, Navex, Elogistia, Colireli, Assil</li>
+    <li>Areex, Ecom, Noest, Salva, Expedia</li>
+  </ul>
+
+  <h3>Contact</h3>
+  <p>WhatsApp: <a href="https://wa.me/213798836701" target="_blank">+213 798 83 67 01</a></p>
+  <p>Email: delivery.toolapp@gmail.com</p>
+</body>
+</html>

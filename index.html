@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delivery Tool</title>
+  <link rel="icon" type="image/png" href="logos/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ─── NAVBAR ─── -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="logos/favicon.png" alt="Delivery Tool" class="logo-img" />
+      <span data-i18n="nav-brand">Delivery Tool</span>
+    </a>
+
+    <div class="nav-center">
+      <a href="#pricing" data-i18n="nav-pricing">Pricing</a>
+      <a href="https://script.google.com/macros/s/AKfycbzCf_EZnQk-0KpiQG6JcdMsIkIj3VRxODKtabxwlmPZztaWgnXsnTyuCrdKSraKb4Zf/exec"
+         class="btn" data-i18n="nav-register">Register</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://wa.me/213798836701?text=Hello!%20I'm%20interested%20in%20Delivery%20Tool."
+         target="_blank" class="contact-link" data-i18n="nav-contact">Contact Us</a>
+
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" data-lang="ar" onclick="setLang('ar')">AR</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="bubble bubble--easy" data-i18n="hero-bubble-safe">✨ Safe</div>
+    <div class="bubble bubble--tracking" data-i18n="hero-bubble-track">📦 Tracking integrated</div>
+    <div class="bubble bubble--faster" data-i18n="hero-bubble-fast">⚡ Faster</div>
+
+    <div class="hero-content">
+      <h1 data-i18n="hero-title">Automate Your Orders, Deliver Smarter — Right from Google Sheets</h1>
+      <p data-i18n="hero-sub">Save hours and money with our all-in-one Google Sheets add-on. Instantly send order details to your delivery providers, track packages in real time, and get detailed team performance stats — all without leaving your spreadsheet.</p>
+      <a href="https://script.google.com/macros/s/AKfycbzCf_EZnQk-0KpiQG6JcdMsIkIj3VRxODKtabxwlmPZztaWgnXsnTyuCrdKSraKb4Zf/exec"
+         class="btn btn--white" data-i18n="hero-cta">Register Now</a>
+    </div>
+  </section>
+
+  <!-- ─── LOGO STRIP — DELIVERY COMPANIES ─── -->
+  <section class="logo-section">
+    <h2 data-i18n="strip-delivery-title">MORE THAN 20 DELIVERY COMPANIES AVAILABLE — JOIN US NOW!</h2>
+    <div class="logo-strip">
+      <div class="logo-track">
+        <img src="logos/dhd.png" alt="DHD" />
+        <img src="logos/zr.png" alt="ZR" />
+        <img src="logos/yalidine.png" alt="Yalidine" />
+        <img src="logos/allo.png" alt="Allo" />
+        <img src="logos/48hr.png" alt="48HR" />
+        <img src="logos/worldexpress.png" alt="WorldExpress" />
+        <img src="logos/anderson.png" alt="Anderson" />
+        <img src="logos/xx.png" alt="Guepex" />
+        <img src="logos/samex.png" alt="Samex" />
+        <img src="logos/ovred.png" alt="Ovred" />
+        <img src="logos/navex.png" alt="Navex" />
+        <img src="logos/elogistia.png" alt="Elogistia" />
+        <img src="logos/colireli.png" alt="Colireli" />
+        <img src="logos/assil.png" alt="Assil" />
+        <img src="logos/areex.png" alt="Areex" />
+        <img src="logos/ecom.png" alt="Ecom" />
+        <img src="logos/noest.png" alt="Noest" />
+        <img src="logos/salva.png" alt="Salva" />
+        <img src="logos/expedia.png" alt="Expedia" />
+
+        <img src="logos/dhd.png" alt="DHD" />
+        <img src="logos/zr.png" alt="ZR" />
+        <img src="logos/yalidine.png" alt="Yalidine" />
+        <img src="logos/allo.png" alt="Allo" />
+        <img src="logos/48hr.png" alt="48HR" />
+        <img src="logos/worldexpress.png" alt="WorldExpress" />
+        <img src="logos/anderson.png" alt="Anderson" />
+        <img src="logos/xx.png" alt="Guepex" />
+        <img src="logos/samex.png" alt="Samex" />
+        <img src="logos/ovred.png" alt="Ovred" />
+        <img src="logos/navex.png" alt="Navex" />
+        <img src="logos/elogistia.png" alt="Elogistia" />
+        <img src="logos/colireli.png" alt="Colireli" />
+        <img src="logos/assil.png" alt="Assil" />
+        <img src="logos/areex.png" alt="Areex" />
+        <img src="logos/ecom.png" alt="Ecom" />
+        <img src="logos/noest.png" alt="Noest" />
+        <img src="logos/salva.png" alt="Salva" />
+        <img src="logos/expedia.png" alt="Expedia" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── LOGO STRIP — E-COMMERCE PLATFORMS ─── -->
+  <section class="logo-section">
+    <h2 data-i18n="strip-ecom-title">All Websites &amp; Stores with Google Sheet Integration Supported</h2>
+    <div class="logo-strip">
+      <div class="logo-track">
+        <img src="logos/shopify.png" alt="Shopify" />
+        <img src="logos/youcan.png" alt="YouCan" />
+        <img src="logos/woocommerce.png" alt="WooCommerce" />
+        <img src="logos/lightfunnels.png" alt="LightFunnels" />
+        <img src="logos/foorweb.png" alt="Foorweb" />
+
+        <img src="logos/shopify.png" alt="Shopify" />
+        <img src="logos/youcan.png" alt="YouCan" />
+        <img src="logos/woocommerce.png" alt="WooCommerce" />
+        <img src="logos/lightfunnels.png" alt="LightFunnels" />
+        <img src="logos/foorweb.png" alt="Foorweb" />
+
+        <img src="logos/shopify.png" alt="Shopify" />
+        <img src="logos/youcan.png" alt="YouCan" />
+        <img src="logos/woocommerce.png" alt="WooCommerce" />
+        <img src="logos/lightfunnels.png" alt="LightFunnels" />
+        <img src="logos/foorweb.png" alt="Foorweb" />
+
+        <img src="logos/shopify.png" alt="Shopify" />
+        <img src="logos/youcan.png" alt="YouCan" />
+        <img src="logos/woocommerce.png" alt="WooCommerce" />
+        <img src="logos/lightfunnels.png" alt="LightFunnels" />
+        <img src="logos/foorweb.png" alt="Foorweb" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURES ─── -->
+  <section class="features">
+    <div class="feature">
+      <div class="feature-icon">📊</div>
+      <h3 data-i18n="feat-1-title">One Platform Is All You Need</h3>
+      <p data-i18n="feat-1-desc">All In One</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">⚙️</div>
+      <h3 data-i18n="feat-2-title">Control Everything</h3>
+      <p data-i18n="feat-2-desc">Custom-crafted To Fit Your Needs</p>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">⚡</div>
+      <h3 data-i18n="feat-3-title">Pure Speed, No Fluff</h3>
+      <p data-i18n="feat-3-desc">Focus On Things That Matter</p>
+    </div>
+  </section>
+
+  <!-- ─── PRICING ─── -->
+  <section id="pricing" class="pricing-section">
+    <h2 class="pricing-title" data-i18n="pricing-title">Choose Your Plan</h2>
+
+    <div class="pricing-container">
+      <!-- Standard -->
+      <div class="pricing-card feature">
+        <h3 data-i18n="plan-standard">Standard</h3>
+        <p class="price">4,500 DA / <span data-i18n="year">Year</span></p>
+        <ul>
+          <li class="available" data-i18n="plan-s-1">1 Delivery Provider at a time</li>
+          <li class="available" data-i18n="plan-s-2">Only first sheet can upload orders</li>
+          <li class="available" data-i18n="plan-s-3">Orders statuses updates</li>
+          <li class="available" data-i18n="plan-s-4">+ Statistics</li>
+          <li class="unavailable" data-i18n="plan-s-5">Custom delivery prices</li>
+          <li class="unavailable" data-i18n="plan-s-6">Black List</li>
+        </ul>
+        <a href="https://script.google.com/macros/s/AKfycbzCf_EZnQk-0KpiQG6JcdMsIkIj3VRxODKtabxwlmPZztaWgnXsnTyuCrdKSraKb4Zf/exec"
+           class="btn" data-i18n="plan-cta">Register Now</a>
+      </div>
+
+      <!-- Advanced -->
+      <div class="pricing-card feature">
+        <h3 data-i18n="plan-advanced">Advanced</h3>
+        <p class="price">6,500 DA / <span data-i18n="year">Year</span></p>
+        <ul>
+          <li class="available" data-i18n="plan-a-1">Up to 5 Confirmatrices with their own sheets</li>
+          <li class="available" data-i18n="plan-a-2">Automatic coloring for order status</li>
+          <li class="available" data-i18n="plan-a-3">Detailed statistics for each confirmatrice</li>
+          <li class="available" data-i18n="plan-a-4">Orders statuses updates</li>
+          <li class="available" data-i18n="plan-a-5">Custom delivery prices supported</li>
+          <li class="available" data-i18n="plan-a-6">+ Black List</li>
+        </ul>
+        <a href="https://script.google.com/macros/s/AKfycbzCf_EZnQk-0KpiQG6JcdMsIkIj3VRxODKtabxwlmPZztaWgnXsnTyuCrdKSraKb4Zf/exec"
+           class="btn" data-i18n="plan-cta">Register Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="footer">
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/deliverytool.app/" aria-label="Instagram"><img src="logos/instagram.png" alt="Instagram" /></a>
+      <a href="https://www.facebook.com/profile.php?id=61574477087679" target="_blank" aria-label="Facebook"><img src="logos/facebook.png" alt="Facebook" /></a>
+      <a href="https://www.tiktok.com/@delivery.tool" target="_blank" aria-label="TikTok"><img src="logos/tiktok.png" alt="TikTok" /></a>
+      <a href="https://www.youtube.com/@deliveryTool" target="_blank" aria-label="YouTube"><img src="logos/youtube.png" alt="YouTube" /></a>
+    </div>
+
+    <div class="footer-links">
+      <a href="privacy.html" class="footer-link" data-i18n="footer-privacy">Privacy &amp; Policy</a>
+      <span class="separator">|</span>
+      <a href="terms.html" class="footer-link" data-i18n="footer-terms">Terms &amp; Conditions</a>
+    </div>
+
+    <p class="footer-copy">Delivery Tool © 2025</p>
+  </footer>
+
+  <!-- ─── TRANSLATIONS ─── -->
+  <script>
+  const i18n = {
+    'nav-brand': {
+      en: 'Delivery Tool',
+      fr: 'Delivery Tool',
+      ar: 'Delivery Tool'
+    },
+    'nav-pricing': {
+      en: 'Pricing',
+      fr: 'Tarifs',
+      ar: 'الأسعار'
+    },
+    'nav-register': {
+      en: 'Register',
+      fr: \"S'inscrire\",
+      ar: 'تسجيل'
+    },
+    'nav-contact': {
+      en: 'Contact Us',
+      fr: 'Contactez-nous',
+      ar: 'اتصل بنا'
+    },
+    'hero-title': {
+      en: 'Automate Your Orders, Deliver Smarter — Right from Google Sheets',
+      fr: 'Automatisez vos commandes, livrez plus intelligemment — directement depuis Google Sheets',
+      ar: 'أتمتة طلباتك، توصيل أذكى — مباشرة من Google Sheets'
+    },
+    'hero-sub': {
+      en: 'Save hours and money with our all-in-one Google Sheets add-on. Instantly send order details to your delivery providers, track packages in real time, and get detailed team performance stats — all without leaving your spreadsheet.',
+      fr: \"Économisez du temps et de l'argent avec notre extension Google Sheets tout-en-un. Envoyez instantanément les détails de vos commandes à vos transporteurs, suivez les colis en temps réel et obtenez des statistiques détaillées — le tout sans quitter votre feuille de calcul.\",
+      ar: 'وفر ساعات ومالًا مع إضافة Google Sheets الشاملة. أرسل تفاصيل طلباتك لشركات التوصيل فورًا، تابع الشحنات لحظة بلحظة، واحصل على إحصائيات أداء مفصلة — كل هذا دون مغادرة جدول البيانات.'
+    },
+    'hero-cta': {
+      en: 'Register Now',
+      fr: \"S'inscrire Maintenant\",
+      ar: 'سجل الآن'
+    },
+    'hero-bubble-safe': {
+      en: '✨ Safe',
+      fr: '✨ Sécurisé',
+      ar: '✨ آمن'
+    },
+    'hero-bubble-track': {
+      en: '📦 Tracking integrated',
+      fr: '📦 Suivi intégré',
+      ar: '📦 تتبع مدمج'
+    },
+    'hero-bubble-fast': {
+      en: '⚡ Faster',
+      fr: '⚡ Plus rapide',
+      ar: '⚡ أسرع'
+    },
+    'strip-delivery-title': {
+      en: 'MORE THAN 20 DELIVERY COMPANIES AVAILABLE — JOIN US NOW!',
+      fr: 'PLUS DE 20 TRANSPORTEURS DISPONIBLES — REJOIGNEZ-NOUS !',
+      ar: 'أكثر من 20 شركة توصيل متاحة — انضم إلينا الآن!'
+    },
+    'strip-ecom-title': {
+      en: 'All Websites & Stores with Google Sheet Integration Supported',
+      fr: 'Tous les sites et boutiques compatibles Google Sheets sont supportés',
+      ar: 'جميع المواقع والمتاجر المتوافقة مع Google Sheets مدعومة'
+    },
+    'feat-1-title': {
+      en: 'One Platform Is All You Need',
+      fr: 'Une seule plateforme suffit',
+      ar: 'منصة واحدة تكفيك'
+    },
+    'feat-1-desc': {
+      en: 'All In One',
+      fr: 'Tout-en-un',
+      ar: 'كل شيء في مكان واحد'
+    },
+    'feat-2-title': {
+      en: 'Control Everything',
+      fr: 'Contrôlez tout',
+      ar: 'تحكم في كل شيء'
+    },
+    'feat-2-desc': {
+      en: 'Custom-crafted To Fit Your Needs',
+      fr: 'Conçu sur mesure pour vos besoins',
+      ar: 'مُصمم خصيصًا ليناسب احتياجاتك'
+    },
+    'feat-3-title': {
+      en: 'Pure Speed, No Fluff',
+      fr: 'De la vitesse, rien que ça',
+      ar: 'سرعة فائقة، بدون تعقيد'
+    },
+    'feat-3-desc': {
+      en: 'Focus On Things That Matter',
+      fr: 'Concentrez-vous sur lessentiel',
+      ar: 'ركز على ما يهم حقًا'
+    },
+    'pricing-title': {
+      en: 'Choose Your Plan',
+      fr: 'Choisissez votre offre',
+      ar: 'اختر خطتك'
+    },
+    'plan-standard': {
+      en: 'Standard',
+      fr: 'Standard',
+      ar: 'قياسي'
+    },
+    'plan-advanced': {
+      en: 'Advanced',
+      fr: 'Avancé',
+      ar: 'متقدم'
+    },
+    'year': {
+      en: 'Year',
+      fr: 'An',
+      ar: 'سنة'
+    },
+    'plan-cta': {
+      en: 'Register Now',
+      fr: \"S'inscrire\",
+      ar: 'سجل الآن'
+    },
+    'plan-s-1': {
+      en: '1 Delivery Provider at a time',
+      fr: '1 transporteur à la fois',
+      ar: 'شركة توصيل واحدة في كل مرة'
+    },
+    'plan-s-2': {
+      en: 'Only first sheet can upload orders',
+      fr: 'Seule la première feuille peut envoyer des commandes',
+      ar: 'الورقة الأولى فقط يمكنها رفع الطلبات'
+    },
+    'plan-s-3': {
+      en: 'Orders statuses updates',
+      fr: 'Mise à jour des statuts des commandes',
+      ar: 'تحديث حالات الطلبات'
+    },
+    'plan-s-4': {
+      en: '+ Statistics',
+      fr: '+ Statistiques',
+      ar: '+ إحصائيات'
+    },
+    'plan-s-5': {
+      en: 'Custom delivery prices',
+      fr: 'Frais de livraison personnalisés',
+      ar: 'أسعار توصيل مخصصة'
+    },
+    'plan-s-6': {
+      en: 'Black List',
+      fr: 'Liste noire',
+      ar: 'قائمة سوداء'
+    },
+    'plan-a-1': {
+      en: 'Up to 5 Confirmatrices with their own sheets',
+      fr: \"Jusqu'à 5 confirmatrices avec leurs propres feuilles\",
+      ar: 'حتى 5 مؤكّدات مع أوراق خاصة بهن'
+    },
+    'plan-a-2': {
+      en: 'Automatic coloring for order status',
+      fr: 'Coloriage automatique des statuts',
+      ar: 'تلوين تلقائي لحالة الطلب'
+    },
+    'plan-a-3': {
+      en: 'Detailed statistics for each confirmatrice',
+      fr: 'Statistiques détaillées pour chaque confirmatrice',
+      ar: 'إحصائيات مفصلة لكل مؤكّدة'
+    },
+    'plan-a-4': {
+      en: 'Orders statuses updates',
+      fr: 'Mise à jour des statuts des commandes',
+      ar: 'تحديث حالات الطلبات'
+    },
+    'plan-a-5': {
+      en: 'Custom delivery prices supported',
+      fr: 'Frais de livraison personnalisés supportés',
+      ar: 'أسعار توصيل مخصصة مدعومة'
+    },
+    'plan-a-6': {
+      en: '+ Black List',
+      fr: '+ Liste noire',
+      ar: '+ قائمة سوداء'
+    },
+    'footer-privacy': {
+      en: 'Privacy & Policy',
+      fr: 'Confidentialité',
+      ar: 'سياسة الخصوصية'
+    },
+    'footer-terms': {
+      en: 'Terms & Conditions',
+      fr: \"Conditions d'utilisation\",
+      ar: 'الشروط والأحكام'
+    }
+  };
+
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (i18n[key] && i18n[key][lang]) {
+        el.textContent = i18n[key][lang];
+      }
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.lang === lang);
+    });
+
+    localStorage.setItem('delivery-tool-lang', lang);
+  }
+
+  // restore saved lang
+  (() => {
+    const saved = localStorage.getItem('delivery-tool-lang') || 'en';
+    setLang(saved);
+  })();
+  </script>
+
+  <!-- ─── SCROLL ANIMATION ─── -->
+  <script>
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  document.querySelectorAll('.feature').forEach(f => observer.observe(f));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 16px; background: #f8fafc; }
+    h2 { color: #1e3a8a; font-size: 1.3rem; }
+    label { display: block; margin: 12px 0 4px; font-weight: 600; font-size: .9rem; }
+    input { width: 100%; padding: 8px; border: 1px solid #d1d5db; border-radius: 8px; }
+    button { background: #2563eb; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; margin-top: 8px; }
+    button:hover { background: #1e40af; }
+    .remove-btn { background: #ef4444; margin-left: 8px; }
+    .remove-btn:hover { background: #dc2626; }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; margin-top: 16px; }
+    th { background: #e8f0fe; text-align: left; padding: 6px 8px; }
+    td { padding: 6px 8px; border-bottom: 1px solid #e5e7eb; }
+    .note { font-size: .8rem; color: #64748b; }
+  </style>
+</head>
+<body>
+  <h2>🚫 Blacklist</h2>
+  <p class="note">Blocked phone numbers. Orders from these numbers will be flagged.</p>
+
+  <label>Phone Number</label>
+  <input id="phoneInput" placeholder="e.g. 0555123456" />
+
+  <label>Reason (optional)</label>
+  <input id="reasonInput" placeholder="Why is this number blacklisted?" />
+
+  <button onclick="add()">➕ Add to Blacklist</button>
+
+  <table id="bl-table">
+    <tr><th>Phone</th><th>Reason</th><th></th></tr>
+  </table>
+
+  <script>
+    function load() {
+      google.script.run.withSuccessHandler(function(json) {
+        var list = JSON.parse(json);
+        var t = document.getElementById('bl-table');
+        t.innerHTML = '<tr><th>Phone</th><th>Reason</th><th></th></tr>';
+        list.forEach(function(item, i) {
+          t.innerHTML += '<tr><td>' + item.phone + '</td><td>' + (item.reason || '-') + '</td><td><button class="remove-btn" onclick="removeItem(' + i + ')">✕</button></td></tr>';
+        });
+      }).getBlacklist();
+    }
+
+    function add() {
+      var phone = document.getElementById('phoneInput').value.trim();
+      var reason = document.getElementById('reasonInput').value.trim();
+      if (!phone) return;
+      google.script.run.withSuccessHandler(function() { load(); }).addToBlacklist(phone, reason);
+    }
+
+    function removeItem(index) {
+      google.script.run.withSuccessHandler(function() { load(); }).removeFromBlacklist(index);
+    }
+
+    load();
+  </script>
+</body>
+</html>
